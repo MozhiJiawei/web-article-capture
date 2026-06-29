@@ -1,14 +1,14 @@
-﻿# Main Agent Prompt: Run vLLM KV Cache Serving Web Capture Forward Test
+# Main Agent Prompt: Run vLLM KV Cache Serving Web Capture Forward Test
 
 Orchestrate one isolated child-agent run. Keep page extraction inside the child run.
 
 Dispatch only:
 
 ```text
-请使用仓库 `web-article-capture/SKILL.md` 完成网页图文抓取 forward test：
+请使用仓库 `SKILL.md` 完成网页图文抓取 forward test：
 
-- Candidate Prompt: web-article-capture/forward-tests/vllm-kv-cache-serving/candidate/prompt.md
-- Candidate Input: web-article-capture/forward-tests/vllm-kv-cache-serving/candidate/input/
+- Candidate Prompt: forward-tests/vllm-kv-cache-serving/candidate/prompt.md
+- Candidate Input: forward-tests/vllm-kv-cache-serving/candidate/input/
 - Output: .tmp/forward-tests/web-article-capture/vllm-kv-cache-serving/<run-id>/
 
 你已经是 candidate child；不要再 spawn 子 agent。
@@ -17,7 +17,7 @@ Dispatch only:
 After completion, inspect the output and run:
 
 ```powershell
-python web-article-capture/scripts/validate_capture_package.py <run-output> --require-images when-referenced
+python scripts/validate_capture_package.py <run-output> --require-images when-referenced
 ```
 
 Open or inspect `<run-output>/review.html` for a human-readable sampling pass: original links, local images, and正文 excerpts should line up for every source.

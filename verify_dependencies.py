@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 VALIDATOR = ROOT / "scripts" / "validate_capture_package.py"
+FORWARD_TESTS = ROOT / "forward-tests"
 
 
 def main() -> int:
@@ -35,6 +36,32 @@ def main() -> int:
             "ok": self_test.returncode == 0,
             "stdout": self_test.stdout.strip(),
             "stderr": self_test.stderr.strip(),
+        }
+    )
+
+    required_forward_files = [
+        FORWARD_TESTS / "README.md",
+        FORWARD_TESTS / "main-agent-prompt.md",
+    ]
+    for case_dir in sorted(path for path in FORWARD_TESTS.iterdir() if path.is_dir()):
+        required_forward_files.extend(
+            [
+                case_dir / "main-agent-prompt.md",
+                case_dir / "candidate" / "prompt.md",
+                case_dir / "candidate" / "input",
+                case_dir / "judge" / "rubric.md",
+            ]
+        )
+    missing_forward_files = [
+        str(path.relative_to(ROOT)).replace("\\", "/")
+        for path in required_forward_files
+        if not path.exists()
+    ]
+    checks.append(
+        {
+            "name": "forward-test protocol files",
+            "ok": not missing_forward_files,
+            "missing": missing_forward_files,
         }
     )
 

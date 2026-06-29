@@ -1,6 +1,6 @@
-﻿# Candidate Prompt: vLLM KV Cache Serving Web Capture
+# Candidate Prompt: vLLM KV Cache Serving Web Capture
 
-Use `web-article-capture/SKILL.md` to extract article/main webpage text and original inline images from the URLs in:
+Use `SKILL.md` to extract article/main webpage text and original inline images from the URLs in:
 
 ```text
 candidate/input/urls.txt
