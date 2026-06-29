@@ -1,0 +1,15 @@
+schema_version: 1
+name: web-article-capture
+title: Web Article Capture
+description: Capture browser-rendered webpage article text and original inline images into compact source packages for downstream agents.
+entry: docs/index.md
+nav:
+  - title: Overview
+    path: docs/index.md
+  - title: Usage
+    path: docs/usage.md
+  - title: Dependencies
+    path: docs/dependencies.md
+  - title: Output Contract
+    path: references/output-contract.md
+status: bootstrap
