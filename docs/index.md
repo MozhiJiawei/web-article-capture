@@ -14,13 +14,16 @@ Each captured page is written as:
   images/
 ```
 
-`source.md` keeps source metadata, captured date, article/main content, local image links, original image URLs, captions, and capture notes.
+`source.md` keeps source metadata, captured date, article/main content, local image links, original image URLs, captions, capture mode, and reliability notes.
 
 ## Boundaries
 
 - Capture the page's article or main reading flow, not a full-page screenshot archive.
-- Preserve original webpage images where possible; do not substitute rendered screenshots for source images.
-- Keep capture reliability notes close to the source package when a page is blocked, lazy-loaded, partially available, or lacks body images.
+- Use the smallest rendered content scope that contains the page title and正文 flow.
+- Stop before post-body modules such as related links, comments, recommendations, product/contact panels, newsletter/social blocks, and site chrome.
+- Preserve original webpage images that belong to正文; reject decorative, UI, recommendation, logo, avatar, placeholder, tracking, or support/contact images unless正文 discusses them.
+- Do not substitute rendered screenshots for source images.
+- Keep capture reliability notes close to the source package when a page is blocked, lazy-loaded, partially available, uses fallback source capture, or lacks body images.
 - Validate packages before handing them to another agent.
 
 ## Related Files
