@@ -4,12 +4,12 @@ title: Web Article Capture
 description: Capture browser-rendered webpage article text and original inline images into compact source packages for downstream agents.
 entry: docs/index.md
 nav:
-  - title: Overview
-    path: docs/index.md
-  - title: Usage
+  - title: 能力展示
+    path: docs/reference.md
+  - title: 使用方式
     path: docs/usage.md
-  - title: Dependencies
+  - title: 依赖说明
     path: docs/dependencies.md
-  - title: Output Contract
-    path: references/output-contract.md
+  - title: 架构概览
+    path: docs/index.md
 status: bootstrap
