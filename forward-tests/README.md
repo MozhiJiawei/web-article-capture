@@ -37,7 +37,7 @@ Forward tests do not need a Node runner. They are main-agent orchestration promp
 - Judge-only files stay in the main agent context.
 - The main agent must not run candidate capture work in the main thread.
 - Do not launch a fire-and-forget worker that cannot receive follow-up input.
-- Before dispatch, the main agent must choose a new `<run-id>` and verify that `.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/` does not exist.
+- Before dispatch, the main agent must choose a new `<run-id>` in `YYYYMMDD-HHMMSS-<short-name>` form and verify that `.tmp/runs/<run-id>/web-article-capture/` does not exist.
 
 Case names are the immediate child directory names under `forward-tests/`.
 
@@ -52,7 +52,8 @@ The child-agent dispatch prompt should contain only:
 - the concrete capture task derived from `candidate/prompt.md`;
 - the assigned URLs or other input values copied from `candidate/input/`;
 - the instruction to follow repository `SKILL.md`;
-- the required output directory under `.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/`;
+- the required output directory under `.tmp/runs/<run-id>/web-article-capture/`;
+- the absolute workspace root, absolute task run root, and exclusive absolute child output directory;
 - at most one short user-requested reminder sentence for that run.
 
 Do not include candidate file paths, strategy explanations, judging criteria, isolation policy, expected answer structure, previous failures, validation mechanics, or judge rubric details in the child-agent dispatch prompt.
@@ -62,6 +63,7 @@ In Codex, keep the child context isolated:
 
 - Do not use full-history forking for the capture child.
 - Spawn the child with a fresh minimal prompt and the inlined task/input values.
+- If the child delegates further, it must propagate the same run root unchanged and allocate non-overlapping descendant output directories.
 - All case inputs should already be in the dispatch prompt; do not mention hidden isolation mechanics to the child.
 - Judge isolation after the run by inspecting evidence, logs, and artifacts available to the main agent.
 
@@ -70,7 +72,7 @@ In Codex, keep the child context isolated:
 Each run writes artifacts under:
 
 ```text
-.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/
+.tmp/runs/<run-id>/web-article-capture/
 ```
 
 Expected deliverables:
@@ -106,7 +108,7 @@ Inspect:
 Write final judgment under:
 
 ```text
-.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/judgment.md
+.tmp/runs/<run-id>/web-article-capture/judgment.md
 ```
 
 ## Included Cases

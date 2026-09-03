@@ -3,7 +3,7 @@
 Score each dimension 0-3.
 
 - Browser Discipline: renders pages through Codex in-app Browser / Browser plugin.
-- Isolation Integrity: child used only the inlined task request, assigned input values, repository `SKILL.md`, and Skill-required references/scripts; no `forward-tests/` paths, judge files, other cases, previous `.tmp/forward-tests/` outputs, or `judgment.md` files were used.
+- Isolation Integrity: child used only the inlined task request, assigned input values, repository `SKILL.md`, and Skill-required references/scripts; no `forward-tests/` paths, judge files, other cases, other `.tmp/runs/` outputs, or `judgment.md` files were used.
 - Browser Recovery: retries page-specific navigation timeouts in a fresh tab, scrolls lazy-loaded正文 figures into view before collecting image URLs, and records the exact blocked stage when Browser access remains blocked.
 - Content Selection: captures the smallest article/main正文 scope from vLLM docs and official blog sources, with a clean terminal boundary before post-body modules or page chrome.
 - Markdown Package: writes useful `source.md` for each page, with metadata, readable正文, and image references placed near relevant text.

@@ -1,6 +1,6 @@
 # 使用方式
 
-请在 prompt 中明确目标 URL 和输出目录，并要求 Agent 使用 `$web-article-capture`。工作区内的临时交付统一写到 `.tmp/web-article-capture/<任务名>/`。
+请在 prompt 中明确目标 URL 和输出目录，并要求 Agent 使用 `$web-article-capture`。工作区内的临时交付统一写到父 Agent 分配的 `.tmp/runs/<run-id>/web-article-capture/`。
 
 ## 可复制 prompt
 
@@ -9,7 +9,7 @@
 - https://example.com/article
 - https://example.com/product-announcement
 
-输出到 .tmp/web-article-capture/my-capture/。
+输出到 .tmp/runs/<run-id>/web-article-capture/。
 请为每个网页生成 source.md + images/ source package；同时生成 review.html，汇总原始链接、抓取模式、正文与尾部摘录、package 链接及本地图片缩略图。交付前运行 validator，并报告受阻页面、fallback 和校验结果。
 ```
 
@@ -20,7 +20,7 @@
 - **输入**：一个或多个可访问 URL、输出目录，以及是否需要 `review.html`。
 - **每页输出**：`<output-root>/<source-slug>/source.md` 和 `<output-root>/<source-slug>/images/`。
 - **可选检查页**：`<output-root>/review.html`，用于集中检查原始链接、正文边界、图片和 fallback 风险。
-- **临时目录**：从工作区根目录执行时使用 `.tmp/web-article-capture/<任务名>/`；不要把临时抓取结果写进 skill 子仓。
+- **临时目录**：从工作区根目录执行时使用 `.tmp/runs/<run-id>/web-article-capture/`；不要为本 Skill 另建 run，也不要把临时抓取结果写进 skill 子仓。
 
 抓取时，Agent应选择包含标题和正文的最小范围，在相关推荐、评论、支持/联系模块和页面 chrome 之前结束；图片应放在其支持的正文附近。Browser 部分可用或受阻时，应记录抓取模式、受阻阶段和 fallback 来源。
 
@@ -29,23 +29,23 @@
 优先从工作区根目录 `Mozhi-s-AgentWorkspace/` 执行，完整命令为：
 
 ```powershell
-python skills/web-article-capture/scripts/validate_capture_package.py .tmp/web-article-capture/my-capture --require-images when-referenced
+python skills/web-article-capture/scripts/validate_capture_package.py .tmp/runs/<run-id>/web-article-capture --require-images when-referenced
 ```
 
 如果当前目录已经是 skill 根目录 `skills/web-article-capture/`，使用：
 
 ```powershell
-python scripts/validate_capture_package.py ../../.tmp/web-article-capture/my-capture --require-images when-referenced
+python scripts/validate_capture_package.py ../../.tmp/runs/<run-id>/web-article-capture --require-images when-referenced
 ```
 
 校验单个、目录内直接含有 `source.md` 的 package 时，同样传入该 package 路径：
 
 ```powershell
 # 工作区根目录
-python skills/web-article-capture/scripts/validate_capture_package.py .tmp/web-article-capture/my-capture/example-article
+python skills/web-article-capture/scripts/validate_capture_package.py .tmp/runs/<run-id>/web-article-capture/example-article
 
 # skill 根目录 skills/web-article-capture/
-python scripts/validate_capture_package.py ../../.tmp/web-article-capture/my-capture/example-article
+python scripts/validate_capture_package.py ../../.tmp/runs/<run-id>/web-article-capture/example-article
 ```
 
 validator 检查 package 是否只有 `source.md` 和 `images/`、本地图片引用是否存在且留在 package 内、图片扩展名是否支持，以及文件名是否疑似截图。它不检查正文是否完整、尾部是否越界、图片是否真正属于正文，也不验证原始 URL 或 fallback 的可靠性。

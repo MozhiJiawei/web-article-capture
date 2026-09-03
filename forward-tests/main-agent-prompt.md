@@ -44,9 +44,10 @@ Run only that one case.
 - Give each child agent only the inlined case task, assigned input values, repository `SKILL.md`, and normal runtime references/scripts required by the Skill.
 - Keep the child-agent dispatch prompt minimal and natural. Do not restate strategy, judging criteria, evidence policy, isolation policy, expected answer structure, previous failures, or validation mechanics.
 - Do not reveal judge-only files, prior generated outputs, or other case directories to a child agent.
-- Before dispatch, choose a new `<run-id>` and verify that `.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/` does not exist.
+- Before dispatch, choose a new `<run-id>` in `YYYYMMDD-HHMMSS-<short-name>` form and verify that `.tmp/runs/<run-id>/web-article-capture/` does not exist.
+- Pass the child the absolute workspace root, the absolute task run root, and an exclusive absolute output directory. Require any descendant dispatch to reuse that run root and a non-overlapping output directory.
 - Judge each completed case with its case rubric.
-- Write judgments under `.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/judgment.md`.
+- Write judgments under `.tmp/runs/<run-id>/web-article-capture/judgment.md`.
 - Judge strictly. Your goal is to find issues in the Skill and delivered artifacts, not to help the child pass the test.
 
 ## Interactive Run Protocol
@@ -95,7 +96,7 @@ Use this shape when spawning a child agent:
 <paste the assigned URLs or other concrete input values here>
 
 输出目录：
-.tmp/forward-tests/web-article-capture/<case-id>/<run-id>/
+.tmp/runs/<run-id>/web-article-capture/
 
 请自行读取并遵循仓库 `SKILL.md` 的完整网页图文抓取流程。
 

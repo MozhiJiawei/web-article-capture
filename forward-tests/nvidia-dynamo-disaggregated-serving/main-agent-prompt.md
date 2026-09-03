@@ -13,7 +13,7 @@ Paste the URLs from `forward-tests/nvidia-dynamo-disaggregated-serving/candidate
 <assigned URLs>
 
 输出目录：
-.tmp/forward-tests/web-article-capture/nvidia-dynamo-disaggregated-serving/<run-id>/
+.tmp/runs/<run-id>/web-article-capture/
 
 请生成每个网页的 `source.md` + `images/` source package，并生成 `review.html` 汇总原始链接、本地图片缩略图、正文摘录和 package 链接。
 ```

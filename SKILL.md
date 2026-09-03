@@ -43,6 +43,8 @@ Use the validator before handing off.
 
 ## Output
 
+When used from this workspace, use the parent-provided current work root and place this skill's outputs under its `web-article-capture/` child. The default work root is `.tmp/runs/<run-id>/`; if the user explicitly designates long-term work, use that retained work root instead. Never use both for the same work.
+
 For each page, write one directory:
 
 ```text

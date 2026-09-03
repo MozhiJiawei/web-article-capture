@@ -9,13 +9,13 @@ Use `SKILL.md` to extract article/main webpage text and original inline images f
 Write one source package per page under:
 
 ```text
-.tmp/forward-tests/web-article-capture/cloudflare-agents-platform/<run-id>/
+.tmp/runs/<run-id>/web-article-capture/
 ```
 
 Also write a review page at:
 
 ```text
-.tmp/forward-tests/web-article-capture/cloudflare-agents-platform/<run-id>/review.html
+.tmp/runs/<run-id>/web-article-capture/review.html
 ```
 
 The review page is for human inspection of the captured sources. Use one section per source with original webpage link, local image thumbnails,正文 excerpt from `source.md`, and links to the local source package.
