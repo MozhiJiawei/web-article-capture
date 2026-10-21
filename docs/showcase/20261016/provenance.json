@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "showcase_date": "2026-10-16",
+  "source_archive": "CCN 快报本地归档 · 2026-10-16",
+  "refresh_is_recapture": false,
+  "note": "从已有 source package 选取并复制，保留原采集模式和正文；本轮未重新执行页面抓取，也未宣称通过独立抓取质量验收。",
+  "cases": [
+    {
+      "slug": "alibaba-roadmap-2026",
+      "title": "AliViews: Eddie Wu Shares Alibaba's Strategic Full-Stack AI Roadmap at the 2026 Apsara Conference",
+      "source_url": "https://www.alibabacloud.com/blog/aliviews-eddie-wu-shares-alibabas-strategic-full-stack-ai-roadmap-at-the-2026-apsara-conference_603595",
+      "published": "2026-09-23",
+      "captured": "2026-10-16",
+      "capture_mode": "rendered capture",
+      "source_file": "alibaba-roadmap-2026/source.md",
+      "source_sha256": "dba2b7b2d14b4fb87910022320437b0ee4039ef619a9939778c63711930f689f",
+      "image_count": 11,
+      "boundary_note": "从演讲开场到致谢和 Alizila 原出处；未包含标签、分享、前后文章、推荐、评论和产品推广。",
+      "limitations": "原图的数字 alt 来自页面；Nearby text 是采集记录补充的上下文，不冒充发布者图注。演讲中的预测与产品主张保留来源归属。",
+      "images": [
+        {
+          "path": "images/image-01.png",
+          "original_url": "https://yqintl.alicdn.com/fc3a4133d49f4745ebd3f44d55d7fb01fb3964f5.png",
+          "width": 1200,
+          "height": 800,
+          "bytes": 1001707,
+          "sha256": "28c1305fd8aa4e1b1db7e0b46a720e2e0d11a854e1461c37f65722bcc6d124db"
+        },
+        {
+          "path": "images/image-02.png",
+          "original_url": "https://yqintl.alicdn.com/bf5a9ededfbcbb50f7f1d24b7e2a6f3b2ce873fd.png",
+          "width": 1200,
+          "height": 296,
+          "bytes": 337989,
+          "sha256": "fdc335f6c38bc3e64eacd1639db11bdc6263e5b0ac3aa3a231fdc4e265c5db29"
+        },
+        {
+          "path": "images/image-03.png",
+          "original_url": "https://yqintl.alicdn.com/3bd487f7f0d2928c30c993fec806308538156f34.png",
+          "width": 1200,
+          "height": 294,
+          "bytes": 356432,
+          "sha256": "fb3f4553dca368b62e30fa69b44324444fc5516f8ec91f6a3e10298a284bfb12"
+        },
+        {
+          "path": "images/image-04.png",
+          "original_url": "https://yqintl.alicdn.com/9cc78729c97c47799a9f436be96e2aef8385670a.png",
+          "width": 1200,
+          "height": 286,
+          "bytes": 382134,
+          "sha256": "ef5d9b54b700a678d25170e302aef9a8fa07170f7cac73414e69121e8fa07abe"
+        },
+        {
+          "path": "images/image-05.png",
+          "original_url": "https://yqintl.alicdn.com/30540d4785c09af391b99826373dc89691df3a95.png",
+          "width": 1200,
+          "height": 298,
+          "bytes": 371589,
+          "sha256": "a18eccc77895bb883d67b57c0e9f62ca36146bf2603414ad1ed169733b7b2d29"
+        },
+        {
+          "path": "images/image-06.png",
+          "original_url": "https://yqintl.alicdn.com/5a1b6f7e82c0193ded2014a7c2d732aa808e2ad0.png",
+          "width": 1200,
+          "height": 292,
+          "bytes": 438252,
+          "sha256": "335a549c4753546dbf55bbd7326c0346d70dc11eeefaf223ec5cee9e42aef3e7"
+        },
+        {
+          "path": "images/image-07.png",
+          "original_url": "https://yqintl.alicdn.com/5b783f34c88e6066cc5d7b21e8dd6f876bf383f2.png",
+          "width": 1200,
+          "height": 295,
+          "bytes": 376416,
+          "sha256": "030dc7536bf4f3a342f7fc71d9beec57a2707ca62b272e4b2dbfbad3717121d0"
+        },
+        {
+          "path": "images/image-08.png",
+          "original_url": "https://yqintl.alicdn.com/1d8a0611654cc7989c932f9dc2231a9bf37b3574.png",
+          "width": 1200,
+          "height": 308,
+          "bytes": 494566,
+          "sha256": "864cd08c535571e7c8562724da01d8d3f3b016ceed42704a04878c557845bd51"
+        },
+        {
+          "path": "images/image-09.png",
+          "original_url": "https://yqintl.alicdn.com/c59232a3407cc84de391625b29eb7be1a27c9ffd.png",
+          "width": 1200,
+          "height": 299,
+          "bytes": 542150,
+          "sha256": "c3b978897ed059616004da8031a0a54b60d79e7c7eb4d9d3a7046f09d0fd9099"
+        },
+        {
+          "path": "images/image-10.png",
+          "original_url": "https://yqintl.alicdn.com/c8943f2e6c41aa57da24e72467acc38af44bd251.png",
+          "width": 1200,
+          "height": 291,
+          "bytes": 360741,
+          "sha256": "6d1c6e27d383a246956b9fd72dd9b52395e61c76f2e991a96563af2198b826a4"
+        },
+        {
+          "path": "images/image-11.png",
+          "original_url": "https://yqintl.alicdn.com/3d70f3356c09bece08c46ea8c4b0552ad06685fa.png",
+          "width": 1200,
+          "height": 292,
+          "bytes": 527685,
+          "sha256": "0181bf59b63a358e9c096287b8949bbe9232c45c823cc4b697381b7fe7e35b6b"
+        }
+      ]
+    },
+    {
+      "slug": "qualcomm-ai-native-platform",
+      "title": "6G Foundry: Rewriting the mobile playbook for the AI era",
+      "source_url": "https://www.qualcomm.com/news/onq/2026/05/6g-foundry-ai-native-platform",
+      "published": "2026-05-29",
+      "captured": "2026-10-16",
+      "capture_mode": "rendered capture (Codex in-app Browser)",
+      "source_file": "qualcomm-ai-native-platform/source.md",
+      "source_sha256": "00b03d27b27f9c7d6eb6be6b0b6d531170caaccbadec61336592417b336c8d4a",
+      "image_count": 9,
+      "boundary_note": "保留 hero 与 Figure 1–8，正文止于最终架构总结段；排除 Go Deeper、newsletter、社交推广、作者头像及相关推荐。",
+      "limitations": "正文中的嵌入阅读列表保留。架构目标与早期实验缺少完整数值测试条件，不能解读为标准要求或商业性能保证。",
+      "images": [
+        {
+          "path": "images/image-01.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/6g-foundry-ai-native-platform?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 493,
+          "bytes": 703558,
+          "sha256": "eb49bcf2665fe7665300500004fa1d6c65d0686a80d2c8a86457c30d6f5dbb1d"
+        },
+        {
+          "path": "images/image-02.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/6G-proposals-for-connectivity?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 458,
+          "bytes": 228765,
+          "sha256": "65dc1972a2f96089545216d2b18c0193db909823b3a42d88007d54a9b67438ef"
+        },
+        {
+          "path": "images/image-03.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/AI-native-device-to-cloud?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 455,
+          "bytes": 147415,
+          "sha256": "10a8799cb1eb4e46492a9a838294407ad340583518dbb730b7413948d8818f57"
+        },
+        {
+          "path": "images/image-04.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/Context-aware-communications?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 435,
+          "bytes": 211485,
+          "sha256": "da78f9ae668a7ce1e78b65147f1814bbb09f5f3607c9a24743752a1945b2da7a"
+        },
+        {
+          "path": "images/image-05.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/Collaborative-communications?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 458,
+          "bytes": 533772,
+          "sha256": "e4753173c750a2b002947340471817ea07388e1bd95217443f91288be3e4bd41"
+        },
+        {
+          "path": "images/image-06.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/Changing-consumer-behaviours?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 458,
+          "bytes": 246338,
+          "sha256": "c916dc2af92e099a8f046e8d9f1ec7a1634d29fd9e744d54af533f2fee93ffa5"
+        },
+        {
+          "path": "images/image-07.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/6G-IoT?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 458,
+          "bytes": 217660,
+          "sha256": "94b9e597956df6f43e63620c2266f5f2a16e8b05dc28d9bd01c2160b033f41d8"
+        },
+        {
+          "path": "images/image-08.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/Sensing?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 458,
+          "bytes": 256939,
+          "sha256": "54fbb268963f7f3acadc7c80107ec293e4eecd9eab14f899bd3b0120703cf2f7"
+        },
+        {
+          "path": "images/image-09.png",
+          "original_url": "https://s7d1.scene7.com/is/image/dmqualcommprod/Timeline?$QC_Responsive$&fmt=png-alpha&wid=814",
+          "width": 814,
+          "height": 446,
+          "bytes": 156130,
+          "sha256": "8f34678f381b4e64f2bfeb607ab3aad270eb8495fb5902c6bce43ab298491e63"
+        }
+      ]
+    }
+  ]
+}

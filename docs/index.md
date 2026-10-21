@@ -8,7 +8,7 @@
 
 1. **渲染与取证**：主 Agent 通过 Codex in-app Browser 打开目标 URL，识别包含标题和正文流的最小 DOM 范围，并在需要时滚动以触发懒加载。
 2. **内容与媒体筛选**：主 Agent 保留正文、图表、图注和附近文本，排除导航、页脚、推荐、评论、联系卡片、UI 图标及装饰图；若 Browser 持续受阻，才使用官方来源 fallback，并记录受阻阶段和版本风险。
-3. **打包与结构校验**：每个页面写成 `<output-root>/<source-slug>/source.md` 和 `images/`。`scripts/validate_capture_package.py` 只检查目录形态、本地图片引用、扩展名和疑似截图文件名，不判断正文边界或图片语义归属。
+3. **打包与结构校验**：每个页面写成 `<output-root>/<source-slug>/source.md` 和 `images/`。`scripts/validate_capture_package.py` 只检查目录形态、Markdown 本地图片引用、扩展名和疑似截图文件名；它不解码图片、不验证来源元数据，也不判断正文边界或图片语义归属。
 
 输入是用户 prompt、目标 URL 列表和输出目录；输出是一个或多个 source package，可按需再生成供人工检查的 `review.html`。网页正文判断、fallback 决策和可靠性说明始终由主 Agent 负责，不能交给结构校验器代替。
 
@@ -43,6 +43,10 @@ docs/                                面向文档站的展示、使用、依赖�
 ```
 
 `docs/` 解释公开使用方式，不取代 `SKILL.md` 的运行时约束；`forward-tests/` 用于评估流程，不是普通抓取任务的输入或交付目录。
+
+## 真实交付入口
+
+[能力展示](./reference.md)收录 2026-10-16 采集归档中的两组 source package：阿里云全栈 AI 路线图的 11 张原图与高通 AI-native 6G 平台的 9 张原图。<a href="./showcase/20261016/review.html" target="_blank" rel="noopener noreferrer">图文展示页</a>把正文摘录、尾部、原始图片 URL、完整 source.md 和采集边界放在同一个检查面中，便于理解上述输出契约。它展示既有交付，不代表一次新的网页抓取或独立质量验收。
 
 ## 多 Agent 职责与边界
 

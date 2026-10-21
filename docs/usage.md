@@ -1,6 +1,6 @@
 # 使用方式
 
-请在 prompt 中明确目标 URL 和输出目录，并要求 Agent 使用 `$web-article-capture`。工作区内的临时交付统一写到父 Agent 分配的 `.tmp/runs/<run-id>/web-article-capture/`。
+请在 prompt 中明确目标 URL 和输出目录，并要求 Agent 使用 `$web-article-capture`。工作区内默认使用本次工作的 `.tmp/runs/<run-id>/web-article-capture/`；子 Agent 沿用父 Agent 分配的同一工作根目录。只有用户明确指定长期本地工作时，才改用对应 retained 工作根目录下的 `web-article-capture/`，同一次工作不混用两者。
 
 ## 可复制 prompt
 
@@ -48,12 +48,14 @@ python skills/web-article-capture/scripts/validate_capture_package.py .tmp/runs/
 python scripts/validate_capture_package.py ../../.tmp/runs/<run-id>/web-article-capture/example-article
 ```
 
-validator 检查 package 是否只有 `source.md` 和 `images/`、本地图片引用是否存在且留在 package 内、图片扩展名是否支持，以及文件名是否疑似截图。它不检查正文是否完整、尾部是否越界、图片是否真正属于正文，也不验证原始 URL 或 fallback 的可靠性。
+validator 检查 package 是否只有 `source.md` 和 `images/`、本地图片引用是否存在且留在 package 内、图片扩展名是否支持，以及文件名是否疑似截图。图片引用检查针对 Markdown 的 `![说明](路径)` 语法；远程图片 URL 和 HTML 图片标签不在本地引用检查范围内。扩展名检查也不会解码图片或确认文件可读。
+
+它不检查来源 URL、抓取日期和抓取模式等元数据是否齐全，不检查正文是否完整、尾部是否越界、图片是否真正属于正文，也不验证原始 URL 或 fallback 的可靠性。`--require-images when-referenced` 通过不代表正文图片已完整下载，主 Agent 仍需按下面的完成标准复核。
 
 ## 完成标准
 
 - 每个目标 URL 都有 source package，或在最终说明中明确记录受阻阶段。
 - `source.md` 包含来源 URL、抓取日期、可读正文、抓取模式与必要的可靠性说明。
-- 正文图片保存在 `images/`，在相关正文附近引用，并记录原始图片 URL 或上下文；无正文图片时保留空目录并说明原因。
+- 正文图片保存在 `images/`，在相关正文附近使用本地路径引用，并同时记录原始图片 URL 和图注或附近正文；无正文图片时保留空目录并说明原因。
 - validator 通过；若无法通过，交付说明列出具体错误和未完成项。
 - 主 Agent人工检查正文起止边界、图片归属、`review.html`（如要求）和 fallback 风险。

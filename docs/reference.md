@@ -1,24 +1,39 @@
 # 能力展示
 
-`web-article-capture` 把网页正文、正文图片和来源可靠性说明整理成下游 Agent 可复用的 source package。以下示例链接到仓库中已经存在的固定提交，不是示意目录或临时路径。
+`web-article-capture` 把网页正文、正文图片和来源可靠性说明整理成下游 Agent 可复用的 source package。这里展示从 2026-10-16 CCN 快报归档中选取的两组真实交付，共 20 张原始 PNG；演讲长文与技术图文各一组。
 
-## 真实示例：NVIDIA DGX Spark 产品页
+<a href="./showcase/20261016/review.html" target="_blank" rel="noopener noreferrer">打开完整图文展示：正文摘录、尾部、全部原图和完整 source.md</a>
 
-示例来源是 NVIDIA 官方产品页：[Personal AI Supercomputer Powered by Blackwell | NVIDIA DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/)。现有交付记录显示其抓取模式为 Codex in-app Browser 渲染抓取，并包含正文边界、媒体取舍和 Browser DOM snapshot 失败后的恢复说明。
+| 示例 | 发布日期 / 采集日期 | 实际采集记录 | 原图 |
+| --- | --- | --- | --- |
+| 阿里云全栈 AI 路线图 | 2026-09-23 / 2026-10-16 | `rendered capture` | 11 张 PNG，均为 1200 px 宽 |
+| 高通 AI-native 6G 平台 | 2026-05-29 / 2026-10-16 | `rendered capture (Codex in-app Browser)` | 9 张 PNG，均为 814 px 宽 |
 
-- [在线打开 `source.md`](https://github.com/MozhiJiawei/hw-ppt-gen-html/blob/a0578c54074669a3e8fdcf87e8e1e2a721794e97/forward-tests/rtx-spark-agent-pc-report/sources/web/nvidia-dgx-spark/source.md)
-- [在线查看完整 `images/` 目录](https://github.com/MozhiJiawei/hw-ppt-gen-html/tree/a0578c54074669a3e8fdcf87e8e1e2a721794e97/forward-tests/rtx-spark-agent-pc-report/sources/web/nvidia-dgx-spark/images)
-- [在线打开正文 hero 原图交付件](https://github.com/MozhiJiawei/hw-ppt-gen-html/blob/a0578c54074669a3e8fdcf87e8e1e2a721794e97/forward-tests/rtx-spark-agent-pc-report/sources/web/nvidia-dgx-spark/images/image-01-hero-dgx-spark.jpg)
+展示页和原始 package 均保留在本 Skill 的公开资料中，不依赖临时目录。source.md 与图片保留采集归档的原始字节；本轮只整理和复核已有交付，没有重新执行网页抓取。采集模式、恢复步骤和边界判断以各包原有记录为准，结构校验通过不等于事实核验或独立抓取质量验收。
 
-该 source package 展示了：
+## 示例一：阿里云全栈 AI 路线图
 
-- 在 `source.md` 开头保留原始页面 URL、发布者、抓取日期和 `rendered capture` 模式；
-- 将 hero、功能卡片、工作负载和软件章节的原始网页图片放在对应正文附近；
-- 为每张保留图片记录原始图片 URL，并在结尾说明保留与排除媒体；
-- 明确正文从产品 H1 开始、在 Partners 后停止，排除 footer 导航；
-- 记录 DOM snapshot API 失败后改用只读页面求值和滚动加载懒加载资源，便于下游判断证据可靠性。
+原始页面来自 Alibaba Cloud Community，注明原作者为 Alizila Staff：[AliViews: Eddie Wu Shares Alibaba's Strategic Full-Stack AI Roadmap at the 2026 Apsara Conference](https://www.alibabacloud.com/blog/aliviews-eddie-wu-shares-alibabas-strategic-full-stack-ai-roadmap-at-the-2026-apsara-conference_603595)。
 
-这是另一子仓 forward-test 输入中实际留存的网页 source package，固定 commit 链接用于证明交付形态和内容；它不是本 skill 仓内的内置 demo，也不代表每个站点都能得到相同图片数量。
+![原始正文图片：机器智能时代的基石——AI 模型、AI 芯片、AI 云](./showcase/20261016/alibaba-roadmap-2026/images/image-06.png)
+
+- <a href="/skill-static/web-article-capture/showcase/20261016/alibaba-roadmap-2026/source.md" target="_blank" rel="noopener noreferrer">打开原始 source.md</a>
+- <a href="./showcase/20261016/review.html#alibaba-roadmap-2026" target="_blank" rel="noopener noreferrer">查看正文与 11 张原图</a>
+
+该 package 保留演讲正文、11 张原图、原图 URL 及附近正文。从开场到致谢和 Alizila 原出处结束，记录排除了标签、分享、前后文章、推荐、评论和产品推广。图片数字 alt 来自原页面，补充的 Nearby text 用来解释图文关系，不冒充发布者图注。演讲中的预测和产品主张保持原有来源归属。
+
+## 示例二：高通 AI-native 6G 平台
+
+原始页面来自 Qualcomm OnQ Blog，作者为 Sunil Patil、Hemanth Sampath：[6G Foundry: Rewriting the mobile playbook for the AI era](https://www.qualcomm.com/news/onq/2026/05/6g-foundry-ai-native-platform)。
+
+![原始正文 Figure 2：从设备、网络、边缘到云的 AI-native 系统](./showcase/20261016/qualcomm-ai-native-platform/images/image-03.png)
+
+- <a href="/skill-static/web-article-capture/showcase/20261016/qualcomm-ai-native-platform/source.md" target="_blank" rel="noopener noreferrer">打开原始 source.md</a>
+- <a href="./showcase/20261016/review.html#qualcomm-ai-native-platform" target="_blank" rel="noopener noreferrer">查看正文与 9 张原图</a>
+
+该 package 保留 hero 与 Figure 1–8、原始图注、原图 URL 和相邻正文。正文止于最终架构总结段，排除 Go Deeper、newsletter、社交推广、作者头像及相关推荐；正文中嵌入的阅读列表保留。文章讨论架构目标与早期实验，缺少完整数值测试条件，不应据此宣称标准要求或保证商业性能。
+
+两包均通过 `validate_capture_package.py --require-images when-referenced`，20 张图片均可解码，展示页可打开原尺寸文件。<a href="/skill-static/web-article-capture/showcase/20261016/provenance.json" target="_blank" rel="noopener noreferrer">公开来源与文件清单</a>记录图片数量、尺寸、原始 URL 和 SHA256，便于核对归档内容。
 
 ## 交付形态
 
@@ -45,5 +60,5 @@
 - 不把整页截图当作 source package，也不把截图放进 `images/` 冒充原始正文图片。
 - 不保留导航、页脚、推荐、评论、联系卡片、社交组件或装饰图，除非正文明确讨论它们。
 - 不绕过登录、访问控制或站点限制；页面持续受阻时应明确降级和风险。
-- validator 只证明结构符合约定，不证明正文完整、图片语义正确或来源事实真实。
+- validator 只检查目录和引用等结构约定，不解码图片或验证来源元数据，也不证明正文完整、图片语义正确或来源事实真实。
 - 页面无正文图片时可以保留空 `images/`，但必须说明可见媒体是不存在还是因不属于正文而被排除。
